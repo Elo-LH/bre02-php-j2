@@ -14,11 +14,9 @@ Vous afficherez le résultat de l'opération au dessus de votre formulaire.
 
 Tout le code de votre exercice sera dans un fichier index.php.
 
-
 ## Étape 2 : Récupérer les champs du formulaire
 
 Dans votre `index.php` si le formulaire a été soumis vous allez devoir récupérer les valeurs dans la superglobale `$_POST`, n'oubliez pas de bien vérifier si les champs existent dans `$_POST` sinon ça va planter :)
-
 
 ## Étape 3 : Créer les fonctions
 
