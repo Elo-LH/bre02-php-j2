@@ -69,20 +69,30 @@ foreach($_POST as $key => $input){
         </div>
         <div>
             <h3 class="text-<?=$color?>">COMPETENCES</h3>
-            <h4 class="text-<?=$color?>">Langages de programmation</h4>
-            
-            <ul>
+
+
+        
                 <?php
-                foreach($codingLanguages as $codingLanguage){
+                 if (isset($codingLanguages)){
+                  ?>
+                      <h4 class="text-<?=$color?>">Langages de programmation</h4>
+            <ul><?php
+                  foreach($codingLanguages as $codingLanguage){
                     echo "<li>$codingLanguage</li>";
                 }
+                 }
+            
                 ?>
             </ul>
            
-            <h4 class="text-<?=$color?>">Frameworks & Librairies</h4>
-            <ul>
+            
                 <?php
-                if (!is_null($frameworks)){
+
+                if (isset($frameworks)){
+                  ?>
+                  <h4 class="text-<?=$color?>">Frameworks & Librairies</h4>
+            <ul>
+              <?php
                     foreach($frameworks as $framework){
                         echo "<li>$framework</li>";
                     }
@@ -90,10 +100,12 @@ foreach($_POST as $key => $input){
                 
                 ?>
             </ul>
-            <h4 class="text-<?=$color?>">Logiciels</h4>
-            <ul>
+            
                 <?php
-                  if (!is_null($softwares)){
+                  if (isset($softwares)){
+                    ?>
+                    <h4 class="text-<?=$color?>">Logiciels</h4>
+            <ul><?php
                 foreach($softwares as $software){
                     echo "<li>$software</li>";
                 }
