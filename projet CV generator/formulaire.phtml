@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Generator Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+ 
+</head>
+  <body>
+    <form action="index.php" method="POST">
+      <h2>INFORMATIONS</h2>
+
+      <label for="lastName">Nom</label>
+      <input name="lastName" id="lastName" type="text" />
+      <label for="firstName">Prénom</label>
+      <input name="firstName" id="firstName" type="text" />
+      <label for="email">Email</label>
+      <input name="email" id="email" type="email" />
+
+      <label for="phone">Téléphone</label>
+      <input name="phone" id="phone" type="phone" />
+
+      <label for="linkedin">LinkedIn</label>
+      <input name="linkedin" id="linkedin" type="text" />
+      <label for="github">GitHub</label>
+      <input name="github" id="github" type="text" />
+      <label for="bio">Biographie</label>
+      <input name="bio" id="bio" type="textarea" />
+
+      <label for="hobby1">Loisir 1</label>
+      <input name="hobby1" id="hobby1" type="text" />
+
+      <label for="hobby2">Loisir 2</label>
+      <input name="hobby2" id="hobby2" type="text" />
+
+      <label for="hobby3">Loisir 3</label>
+      <input name="hobby3" id="hobby3" type="text" />
+
+      <label for="hobby4">Loisir 4</label>
+      <input name="hobby4" id="hobby4" type="text" />
+
+      <fieldset>
+        <legend>Langues</legend>
+        <input type="radio" id="french" name="language" value="french" />
+        <label for="french">Français</label>
+
+        <input type="radio" id="english" name="language" value="english" />
+        <label for="english">Anglais</label>
+
+        <input type="radio" id="arabic" name="language" value="arabic" />
+        <label for="arabic">Arabe</label>
+
+        <input type="radio" id="breizh" name="language" value="breizh" />
+        <label for="breizh">Breton</label>
+
+        <input type="radio" id="spanish" name="language" value="spanish" />
+        <label for="spanish">Espagnol</label>
+      </fieldset>
+
+      <h2>COMPETENCES</h2>
+
+      <fieldset>
+        <legend>Langages de Programmation</legend>
+        <input type="checkbox" id="html" name="codingLanguages[]" value="html" />
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="codingLanguages[]" value="css" />
+        <label for="css">CSS</label>
+
+        <input
+          type="checkbox"
+          id="javascript"
+          name="codingLanguages[]"
+          value="javascript"
+        />
+        <label for="javascript">JavaScript</label>
+
+        <input type="checkbox" id="php" name="codingLanguages[]" value="php" />
+        <label for="php">PHP</label>
+
+        <input type="checkbox" id="sql" name="codingLanguages[]" value="sql" />
+        <label for="sql">SQL</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Frameworks[] & Librairies</legend>
+        <input type="checkbox" id="sass" name="frameworks[]" value="sass" />
+        <label for="sass">Sass</label>
+
+        <input
+          type="checkbox"
+          id="bootstrap"
+          name="frameworks[]"
+          value="bootstrap"
+        />
+        <label for="bootstrap">Bootstrap</label>
+
+        <input type="checkbox" id="symfony" name="frameworks[]" value="symfony" />
+        <label for="symfony">Symfony</label>
+
+        <input type="checkbox" id="laravel" name="frameworks[]" value="laravel" />
+        <label for="laravel">Laravel</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Logiciels</legend>
+        <input
+          type="checkbox"
+          id="photoshop"
+          name="softwares[]"
+          value="photoshop"
+        />
+        <label for="photoshop">Photoshop</label>
+
+        <input
+          type="checkbox"
+          id="illustrator"
+          name="softwares[]"
+          value="illustrator"
+        />
+        <label for="illustrator">Illustrator</label>
+
+        <input type="checkbox" id="xd" name="softwares[]" value="xd" />
+        <label for="xd">XD</label>
+
+        <input type="checkbox" id="figma" name="softwares[]" value="figma" />
+        <label for="figma">Figma</label>
+      </fieldset>
+      <fieldset>
+        <legend>Couleur du CV</legend>
+        <select name="color" id="color">
+          <option value="red">Rouge</option>
+          <option value="blue">Bleu</option>
+        </select>
+      </fieldset>
+
+      <button type="submit">Générer mon CV</button>
+    </form>
+  </body>
+</html>

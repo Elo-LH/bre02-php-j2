@@ -1,0 +1,42 @@
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  --rouge: #b50604;
+  --bleu: #24527c;
+  --blanc-fond: #fefefe;
+  --blanc: white;
+  --gris: #bababa;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--blanc-fond);
+}
+
+.red {
+  background-color: var(--rouge);
+  color: var(--blanc);
+}
+.blue {
+  background-color: var(--bleu);
+  color: var(--blanc);
+}
+.text-blue {
+  color: var(--bleu);
+}
+.text-red {
+  color: var(--rouge);
+}
+
+header {
+  padding: 10px 0;
+  text-align: center;
+}
+.flex-cv-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+}
+.flex-cv-content div {
+  width: 50%;
+  padding: 10px;
+}

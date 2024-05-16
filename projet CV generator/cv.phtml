@@ -1,0 +1,109 @@
+<?php 
+// echo $_POST['codingLanguage[]'];
+// $checked_count = count($_POST['frameworks']);
+// echo $checked_count;
+
+foreach($_POST as $key => $input){
+    if (isset($input)) // vérifie si la valeur existe
+    {
+        // echo "$key, $input ----- ";
+        
+        if (!empty($input)) {
+            
+            // if($key === 'codingLanguage' || $key === 'frameworks' || $key === 'softwares' ){
+            //     $total = '';
+            //     foreach($key as $selected){
+            //         $total = $total . $selected;
+            //     }
+            //     $$key = $total;
+            //     echo $$key;
+            
+                $$key = $input;
+            
+
+        } else {
+          echo "Missing data";
+        }
+    } else {
+        echo "Missing data";
+      
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Generated</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <article>
+      <header class="<?=$color?>">
+        <h1><?=$lastName?> <?=$firstName?></h1>
+        <h2>Intitulé du poste</h2>
+      </header>
+      <main class="flex-cv-content">
+        <div>
+            <h3 class="text-<?=$color?>">INFORMATIONS</h3>
+            <h4 class="text-<?=$color?>">Contact</h4>
+            <h5 class="text-<?=$color?>">Email</h5>
+            <a href="mailto:<?=$email?>"><?=$email?></a>
+            <h5 class="text-<?=$color?>">Téléphone</h5>
+            <a href="tel:<?=$phone?>"><?=$phone?></a>
+            <h5 class="text-<?=$color?>">LinkedIn</h5>
+            <a href="<?=$linkedin?>"><?=$linkedin?></a>
+            <h5 class="text-<?=$color?>">GitHub</h5>
+            <a href="<?=$github?>"><?=$github?></a>
+            <h4 class="text-<?=$color?>">Biographie</h4>
+            <p><?=$bio?></p>
+            <h4 class="text-<?=$color?>">Loisirs</h4>
+            <ul>
+                <li><?=$hobby1?></li>
+                <li><?=$hobby2?></li>
+                <li><?=$hobby3?></li>
+                <li><?=$hobby4?></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-<?=$color?>">COMPETENCES</h3>
+            <h4 class="text-<?=$color?>">Langages de programmation</h4>
+            
+            <ul>
+                <?php
+                foreach($codingLanguages as $codingLanguage){
+                    echo "<li>$codingLanguage</li>";
+                }
+                ?>
+            </ul>
+           
+            <h4 class="text-<?=$color?>">Frameworks & Librairies</h4>
+            <ul>
+                <?php
+                if (!is_null($frameworks)){
+                    foreach($frameworks as $framework){
+                        echo "<li>$framework</li>";
+                    }
+                }
+                
+                ?>
+            </ul>
+            <h4 class="text-<?=$color?>">Logiciels</h4>
+            <ul>
+                <?php
+                  if (!is_null($softwares)){
+                foreach($softwares as $software){
+                    echo "<li>$software</li>";
+                }
+            }
+                ?>
+            </ul>
+            <h4 class="text-<?=$color?>">Langues</h4>
+            <p><?=$language ?></p>
+        </div>
+      </main>
+    </article>
+  </body>
+</html>
