@@ -1,21 +1,26 @@
 <?php
 
-function getVariablePost($variable)
+// if (!array_filter($_POST)) {
+//     //echo somthing to user to fill the form
+//     echo "test";
+// } else {
+//     print_r($_POST);
+//     echo $_POST["nb1"];
+// }
+function getVariablePost(string $variable): string
 {
-    if (isset($variable)) // vérifie si la valeur existe
+    if (isset($_POST[$variable])) // vérifie si la valeur existe
     {
-        if (!empty($variable)) {
+        if (!empty($_POST[$variable]) || (!is_null($_POST[$variable]))) {
 
-            return $variable;
+            return $_POST[$variable];
+        } else {
+            return "error";
         }
     } else {
-        echo "Error no posted data";
+        return "error";
     }
 }
-
-$nb1 = (int) getVariablePost($_POST["nb1"]);
-$nb2 = (int) getVariablePost($_POST["nb2"]);
-$calculation = getVariablePost($_POST["calcul-select"]);
 
 function add(int $nb1, int $nb2): int
 {
@@ -65,10 +70,23 @@ function calculate(float $nb1, float $nb2, string $calculation): ?float
     }
 }
 
-$result = calculate($nb1, $nb2, $calculation);
-if ($result === null) {
-    $result = 'résultat nul';
+
+$nb1 = getVariablePost("nb1");
+$nb2 = getVariablePost("nb2");
+$calculation = getVariablePost("calcul-select");
+
+if ($nb1 === 'error' || $nb2 === 'error' || $calculation === 'error') {
+    $result = null;
+} else {
+    $nb1 = (int) $nb1;
+    $nb2 = (int) $nb2;
+    $result = calculate($nb1, $nb2, $calculation);
+    if (is_null($result)) {
+        $result = "can't divide with 0";
+    }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -84,9 +102,9 @@ if ($result === null) {
     <p><?= $result ?> </p>
     <form action="index.php" method="POST">
         <label for="nb1">First Number:</label>
-        <input name="nb1" id="nb1" type="number" required>
+        <input name="nb1" id="nb1" type="number">
         <label for="nb2">Second Number:</label>
-        <input name="nb2" id="nb2" type="number" required>
+        <input name="nb2" id="nb2" type="number">
         <label for="calcul-select">Choose a calculation:</label>
         <select name="calcul-select" id="calcul-select">
             <option value="multiply">Multiply</option>
