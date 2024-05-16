@@ -46,6 +46,9 @@ function divide(int $nb1, int $nb2): ?float
 
 function modulo(int $nb1, int $nb2): ?int
 {
+    if ($nb1 === 0 || $nb2 === 0) {
+        return null;
+    }
     return $nb1 % $nb2;
 };
 
