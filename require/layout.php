@@ -8,6 +8,26 @@
 </head>
 
 <body>
+    <?php require "header.php" ?>
+    <?php 
+    switch ($route) {
+        case "home":
+            require "home.php";
+            break;
+        case "about":
+            require "about.php";
+            break;
+        case "contact":
+            require "contact.php";
+            break;
+        default:
+            require "home.php";
+            break;
+    }
+    
+    
+     ?>
+    <?php require "footer.php" ?>
 
 </body>
 

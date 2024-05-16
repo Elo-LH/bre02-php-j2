@@ -2,13 +2,13 @@
     <nav>
         <ul>
             <li>
-                <a href="">Accueil</a>
+                <a href="http://bre02-php-j2/require/index.php?route=home">Accueil</a>
             </li>
             <li>
-                <a href="">À propos</a>
+                <a href="http://bre02-php-j2/require/index.php?route=about">À propos</a>
             </li>
             <li>
-                <a href="">Contact</a>
+                <a href="http://bre02-php-j2/require/index.php?route=contact">Contact</a>
             </li>
         </ul>
     </nav>
